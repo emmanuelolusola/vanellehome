@@ -8,7 +8,8 @@ function App() {
 
   return (
     <>
-      <p>Under Construction!</p>
+      <p className="text-[48px] font-bold">Vanelle Home</p>
+      <p className="text-[24px] font-normal">Under Construction!</p>
     </>
   );
 }
