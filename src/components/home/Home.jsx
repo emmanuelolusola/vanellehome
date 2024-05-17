@@ -5,7 +5,7 @@ import Hero from "./Hero";
 const Home = () => {
   return (
     <div>
-      <div className="fixed w-full h-[100vh] flex justify-center items-center backdrop-blur-sm px-[24px] z-20">
+      <div className="hidden fixed w-full h-[100vh] flex justify-center items-center backdrop-blur-sm px-[24px] z-20">
         <div className="flex flex-col gap-2 lg:gap-4 text-white">
           <p className="text-[42px] font-bold">Under Construction</p>
           <p className="text-[16px] lg:text-[18px] font-normal">
