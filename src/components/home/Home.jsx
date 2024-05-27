@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Collection from "./Collection";
+import Category from "./Category";
 
 const Home = () => {
   return (
@@ -14,16 +15,20 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className="w-full fixed top-0 bg-[#eeebe8] z-10">
-        <div className="bg-[#CDA78F] w-full h-8 lg:h-10 flex justify-center items-center">
-          <p className="text-[16px] lg:text-[16px] text-[#1d1d1f]">
-            Announcements and promo!!!
+      <div className="w-full fixed top-0 bg-[#eeebe8] z-10 drop-shadow-md">
+        <div className="bg-[#CDA78F] w-full h-8 lg:h-10 flex justify-center items-center overflow-hidden">
+          <p className="scrolling-text text-[16px] lg:text-[16px] text-[#1d1d1f]">
+            Announcements and promo!!! ==={">"} Figma ipsum component variant
+            main layer. Component bold team device group figma draft frame
+            hand.Figma ipsum component variant main layer. Component bold team
+            device group figma draft frame hand.
           </p>
         </div>
         <Navbar />
       </div>
       <Hero />
       <Collection />
+      <Category />
     </div>
   );
 };

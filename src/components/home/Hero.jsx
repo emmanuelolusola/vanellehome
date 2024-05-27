@@ -9,8 +9,8 @@ const Hero = () => {
         className="w-full h-[100vh] bg-center bg-cover flex justify-center items-center"
         style={{ backgroundImage: `url(${img})` }}
       >
-        <div className="flex flex-col gap-8 w-full lg:w-[600px]">
-          <p className="font-bold text-[64px] text-[#f5f5f7] text-center">
+        <div className="px-[24px] lg:px-0 mt-10 flex flex-col gap-8 w-full lg:w-[600px]">
+          <p className="font-bold text-[48px] lg:text-[64px] text-[#f5f5f7] text-center">
             Home Decor
           </p>
           <p className="font-normal text-[16px] text-[#f5f5f7] text-center">
@@ -28,8 +28,8 @@ const Hero = () => {
         className="w-full h-[100vh] bg-center bg-cover flex justify-center items-center"
         style={{ backgroundImage: `url(${img2})` }}
       >
-        <div className="flex flex-col gap-8 w-full lg:w-[600px]">
-          <p className="font-bold text-[64px] text-[#f5f5f7] text-center">
+        <div className="px-[24px] lg:px-0 mt-10 flex flex-col gap-8 w-full lg:w-[600px]">
+          <p className="font-bold text-[48px] lg:text-[64px] text-[#f5f5f7] text-center">
             Home Fragrance
           </p>
           <p className="font-normal text-[16px] text-[#f5f5f7] text-center">

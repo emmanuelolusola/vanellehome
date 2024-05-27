@@ -4,6 +4,9 @@ import logo from "../../assets/vlogo.png";
 import hamburger from "../../assets/menu-left.svg";
 import cancel from "../../assets/cancel.svg";
 import search from "../../assets/search-line.svg";
+import { CgProfile } from "react-icons/cg";
+import { IoCartOutline } from "react-icons/io5";
+import { FiHeart } from "react-icons/fi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,19 +37,25 @@ const Navbar = () => {
     <div className="w-full py-4">
       <div className="w-full lg:w-[80%] px-[24px] lg:px-0 lg:mx-auto flex flex-col gap-8">
         <div className="w-full flex justify-between items-center">
-          <div className="w-[40%]">
-            <img src={search} alt="" width={24} />
+          <div className="w-[60%] flex gap-2">
+            <img src={hamburger} alt="" className="sm:hidden" width={22} />
+            <img src={search} alt="" width={24} className="hidden lg:block" />
+            <FiHeart className="sm:hidden" size={22} />
           </div>
           <div className="w-full flex justify-center">
             <img src={logo} alt="" />
           </div>
-          <div className="w-[40%] flex gap-4">
+          <div className="w-[80%] hidden lg:flex gap-4 justify-end">
             <p className="font-normal text-[16px]">My Account</p>
             <p className="font-normal text-[16px]">Wishlist</p>
             <p className="font-normal text-[16px]">View cart</p>
           </div>
+          <div className="sm:hidden w-[60%] flex gap-2 justify-end">
+            <CgProfile size={22} />
+            <IoCartOutline size={22} />
+          </div>
         </div>
-        <div className="flex justify-center gap-8">
+        <div className="hidden lg:flex justify-center gap-8">
           <p className="font-normal text-[16px] text-[#CDA78F]">ABOUT US</p>
           <p className="font-normal text-[16px] text-[#CDA78F]">CATEGORIES</p>
           <p className="font-normal text-[16px] text-[#CDA78F]">

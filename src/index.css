@@ -36,3 +36,18 @@ body {
 .faded-out {
   animation: fadeOut 0.5s ease-in-out forwards;
 }
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-text 30s linear infinite;
+}
+
+@keyframes scroll-text {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
