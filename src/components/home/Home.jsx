@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Collection from "./Collection";
 import Category from "./Category";
+import Features from "./Features";
 
 const Home = () => {
   return (
@@ -29,6 +30,7 @@ const Home = () => {
       <Hero />
       <Collection />
       <Category />
+      <Features />
     </div>
   );
 };

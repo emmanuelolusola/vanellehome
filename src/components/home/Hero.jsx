@@ -18,7 +18,7 @@ const Hero = () => {
             group figma draft frame hand.
           </p>
           <div className="flex justify-center">
-            <button className="px-8 py-4 text-white border border-[#cda78f] text-[16px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f]">
+            <button className="px-8 py-4 text-white border border-[#cda78f] text-[16px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f] custom-hover-transition">
               SHOP NOW
             </button>
           </div>
@@ -37,7 +37,7 @@ const Hero = () => {
             group figma draft frame hand.
           </p>
           <div className="flex justify-center">
-            <button className="px-8 py-4 text-white border border-[#cda78f] text-[16px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f]">
+            <button className="px-8 py-4 text-white border border-[#cda78f] text-[16px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f] custom-hover-transition">
               SHOP NOW
             </button>
           </div>

@@ -4,20 +4,16 @@ import { FiHeart } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
 
-const Collection = () => {
-  const productArray = Array(7).fill(0);
-
+const Features = () => {
+  const productArray = Array(4).fill(0);
   return (
     <div className="w-full lg:w-[80%] lg:mx-auto px-[24px] lg:px-0 py-20">
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <div className="w-full flex justify-center">
+          <div className="w-full flex">
             <p className="py-2 border-b-4 border-[#cda78f] text-[18px] font-normal">
-              BEST SELLER
+              Featured Products
             </p>
-          </div>
-          <div className="w-full flex justify-center">
-            <p className="text-[18px]">Best Seller Product this Week!</p>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row lg:flex-wrap justify-center lg:gap-10">
@@ -51,4 +47,4 @@ const Collection = () => {
   );
 };
 
-export default Collection;
+export default Features;
