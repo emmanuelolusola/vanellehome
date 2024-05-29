@@ -96,7 +96,7 @@ const Navbar = () => {
                 </div>
                 <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                   <p className="text-[16px]">LAUNDRY ESSENTIALS</p>
-                  <IoMdAdd />
+                  {/* <IoMdAdd /> */}
                 </div>
                 <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                   <p className="text-[16px]">HOME DECOR</p>

@@ -4,6 +4,10 @@ import Hero from "./Hero";
 import Collection from "./Collection";
 import Category from "./Category";
 import Features from "./Features";
+import BookShopper from "./BookShopper";
+import CleaningService from "./CleaningService";
+import Footer from "./Footer";
+import Copyright from "./Copyright";
 
 const Home = () => {
   return (
@@ -30,7 +34,11 @@ const Home = () => {
       <Hero />
       <Collection />
       <Category />
+      <BookShopper />
       <Features />
+      <CleaningService />
+      <Footer />
+      <Copyright />
     </div>
   );
 };
