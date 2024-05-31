@@ -18,6 +18,9 @@ const Footer = () => {
               className="w-full h-[40px] bg-transparent px-4 placeholder-[#cda78f] custom-input italic"
               placeholder="enter email address"
             />
+            <button className="px-8 py-4 text-[#f5f5f7] bg-[#cda78f] text-[16px] ">
+              Subscribe
+            </button>
           </div>
           <div className="flex flex-col lg:flex-row justify-end gap-10 lg:gap-20">
             <div className="flex flex-col gap-2">
