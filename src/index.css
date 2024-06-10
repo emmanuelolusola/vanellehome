@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   background-color: #eeebe8;
 }
 
@@ -92,4 +92,37 @@ body {
   outline: none;
   border-left: 2px solid #cda78f;
   border-bottom: 2px solid #cda78f;
+}
+
+.custom-input-new {
+  border-left: 0px solid #cda78f;
+  border-bottom: 0px solid #cda78f;
+  border-top: none;
+  border-right: none;
+  color: #1d1d1f;
+}
+
+.custom-input-new::placeholder {
+  color: #1d1d1f;
+}
+
+.custom-input-new:focus {
+  outline: none;
+  border-left: 0px solid #cda78f;
+  border-bottom: 0px solid #cda78f;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-animation {
+  animation: slideInFromBottom 1s ease-in-out forwards;
 }

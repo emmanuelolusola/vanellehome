@@ -1,43 +1,19 @@
 import React from "react";
 import img from "../../assets/hero_image.png";
-import img2 from "../../assets/FRAG.png";
 
 const Hero = () => {
   return (
-    <div className="w-full relative">
+    <div className="w-full relative flex flex-col gap-2 mt-8">
       <div
-        className="w-full h-[100vh] bg-center bg-cover flex justify-center items-center"
+        className="w-full h-[600px] lg:h-[100vh] bg-center bg-cover flex justify-center items-center"
         style={{ backgroundImage: `url(${img})` }}
       >
         <div className="px-[24px] lg:px-0 mt-10 flex flex-col gap-8 w-full lg:w-[600px]">
-          <p className="font-bold text-[48px] lg:text-[64px] text-[#f5f5f7] text-center">
-            Home Decor
+          <p className="w-[280px] lg:w-full slide-animation font-bold text-[48px] lg:text-[84px] text-[#f5f5f7] text-start lg:text-center">
+            Everything You Need In One Place
           </p>
-          <p className="font-normal text-[16px] text-[#f5f5f7] text-center">
-            Figma ipsum component variant main layer. Component bold team device
-            group figma draft frame hand.
-          </p>
-          <div className="flex justify-center">
-            <button className="px-8 py-4 text-white border border-[#cda78f] text-[16px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f] custom-hover-transition">
-              SHOP NOW
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="w-full h-[100vh] bg-center bg-cover flex justify-center items-center"
-        style={{ backgroundImage: `url(${img2})` }}
-      >
-        <div className="px-[24px] lg:px-0 mt-10 flex flex-col gap-8 w-full lg:w-[600px]">
-          <p className="font-bold text-[48px] lg:text-[64px] text-[#f5f5f7] text-center">
-            Home Fragrance
-          </p>
-          <p className="font-normal text-[16px] text-[#f5f5f7] text-center">
-            Figma ipsum component variant main layer. Component bold team device
-            group figma draft frame hand.
-          </p>
-          <div className="flex justify-center">
-            <button className="px-8 py-4 text-white border border-[#cda78f] text-[16px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f] custom-hover-transition">
+          <div className="slide-animation flex justify-start lg:justify-center">
+            <button className="px-4 py-2 text-white border border-[#cda78f] text-[14px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f] custom-hover-transition">
               SHOP NOW
             </button>
           </div>

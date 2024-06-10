@@ -20,9 +20,9 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className="w-full fixed top-0 bg-[#eeebe8] z-10 drop-shadow-md">
-        <div className="bg-[#CDA78F] w-full h-8 lg:h-10 flex justify-center items-center overflow-hidden">
-          <p className="scrolling-text text-[16px] lg:text-[16px] text-[#1d1d1f]">
+      <div className="w-full fixed top-0 bg-[#eeebe8] z-20 drop-shadow-md">
+        <div className="bg-[#CDA78F] w-full h-6 lg:h-10 flex justify-center items-center overflow-hidden">
+          <p className="scrolling-text text-[12px] lg:text-[16px] text-[#1d1d1f]">
             Announcements and promo!!! ==={">"} Figma ipsum component variant
             main layer. Component bold team device group figma draft frame
             hand.Figma ipsum component variant main layer. Component bold team
@@ -32,11 +32,11 @@ const Home = () => {
         <Navbar />
       </div>
       <Hero />
-      <Collection />
       <Category />
-      <BookShopper />
       <Features />
       <CleaningService />
+      <Collection />
+      {/* <BookShopper /> */}
       <Footer />
       <Copyright />
     </div>

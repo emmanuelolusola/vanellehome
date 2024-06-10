@@ -7,23 +7,23 @@ import { FaEye } from "react-icons/fa";
 const Features = () => {
   const productArray = Array(4).fill(0);
   return (
-    <div className="w-full lg:w-[80%] lg:mx-auto px-[24px] lg:px-0 py-20">
+    <div className="w-full lg:w-[80%] lg:mx-auto px-[24px] lg:px-0 pb-20 lg:py-20">
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <div className="w-full flex">
-            <p className="py-2 border-b-4 border-[#cda78f] text-[18px] font-normal">
+            <p className="py-2 border-b-4 border-[#cda78f] text-[28px] font-bold">
               Featured Products
             </p>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row lg:flex-wrap justify-center lg:gap-10">
+        <div className="flex flex-wrap justify-center gap-4">
           {productArray.map((_, index) => (
-            <div key={index} className="flex flex-col gap-4 mt-10 items-center">
+            <div key={index} className="flex flex-col gap-4 mt-4 items-center">
               <div
-                className="relative w-[85vw] lg:w-[18vw] h-[50vh] lg:h-[40vh] bg-center bg-cover flex justify-center items-center hover:scale-105 transition ease-in-out"
+                className="relative w-[38vw] lg:w-[18vw] h-[25vh] lg:h-[40vh] bg-center bg-cover flex justify-center items-center hover:scale-105 transition ease-in-out border border-[#00000010]"
                 style={{ backgroundImage: `url(${product})` }}
               >
-                <div className="absolute bottom-6 flex gap-4">
+                <div className="absolute bottom-4 flex gap-2">
                   <div className="bg-white rounded-full flex justify-center items-center p-2 cursor-pointer hover:scale-125 transition ease-in-out">
                     <FiHeart />
                   </div>
@@ -36,12 +36,17 @@ const Features = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center">
-                <p className="text-[16px] font-normal">Product Name</p>
-                <p className="font-bold text-[#cda78f] text-[16px]">#25,000</p>
+                <p className="text-[14px] font-normal">Product Name</p>
+                <p className="font-bold text-[#cda78f] text-[14px]">#25,000</p>
               </div>
             </div>
           ))}
         </div>
+      </div>
+      <div className="w-full flex justify-center items-center mt-8">
+        <button className="px-4 py-2 text-[#cda78f] border border-[#cda78f] text-[14px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f] hover:text-[#ffffff] custom-hover-transition">
+          SHOW MORE
+        </button>
       </div>
     </div>
   );
