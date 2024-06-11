@@ -49,7 +49,7 @@ const Category = () => {
   return (
     <div className="w-full lg:w-[80%] lg:mx-auto px-[24px] lg:px-0 py-20">
       <div className="w-full flex justify-center">
-        <p className="py-2 border-b-4 border-[#cda78f] text-[28px] font-bold">
+        <p className="py-2 border-b-2 border-[#cda78f] text-[24px] font-bold">
           SHOP BY CATEGORY
         </p>
       </div>

@@ -12,7 +12,7 @@ const Collection = () => {
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-2">
           <div className="w-full flex justify-center">
-            <p className="py-2 border-b-4 border-[#cda78f] text-[28px] font-bold">
+            <p className="py-2 border-b-2 border-[#cda78f] text-[24px] font-bold">
               BEST SELLER
             </p>
           </div>

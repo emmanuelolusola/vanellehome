@@ -8,6 +8,8 @@ import BookShopper from "./BookShopper";
 import CleaningService from "./CleaningService";
 import Footer from "./Footer";
 import Copyright from "./Copyright";
+import ForKitchen from "./ForKitchen";
+import Recommended from "./Recommended";
 
 const Home = () => {
   return (
@@ -22,7 +24,7 @@ const Home = () => {
       </div>
       <div className="w-full fixed top-0 bg-[#eeebe8] z-20 drop-shadow-md">
         <div className="bg-[#CDA78F] w-full h-6 lg:h-10 flex justify-center items-center overflow-hidden">
-          <p className="scrolling-text text-[12px] lg:text-[16px] text-[#1d1d1f]">
+          <p className="scrolling-text text-[14px] lg:text-[16px] text-[#1d1d1f]">
             Announcements and promo!!! ==={">"} Figma ipsum component variant
             main layer. Component bold team device group figma draft frame
             hand.Figma ipsum component variant main layer. Component bold team
@@ -36,6 +38,8 @@ const Home = () => {
       <Features />
       <CleaningService />
       <Collection />
+      <ForKitchen />
+      <Recommended />
       {/* <BookShopper /> */}
       <Footer />
       <Copyright />

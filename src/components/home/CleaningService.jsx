@@ -31,7 +31,7 @@ const CleaningService = () => {
   return (
     <div className="flex flex-col gap-8 py-20">
       <div className="w-full flex justify-center">
-        <p className="py-2 border-b-4 border-[#cda78f] text-[28px] font-bold">
+        <p className="py-2 border-b-2 border-[#cda78f] text-[24px] font-bold">
           OUR SERVICES
         </p>
       </div>

@@ -11,7 +11,7 @@ const Features = () => {
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <div className="w-full flex">
-            <p className="py-2 border-b-4 border-[#cda78f] text-[28px] font-bold">
+            <p className="py-2 border-b-2 border-[#cda78f] text-[24px] font-bold">
               Featured Products
             </p>
           </div>
