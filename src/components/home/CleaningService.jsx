@@ -49,12 +49,12 @@ const CleaningService = () => {
                   <p className=" w-[80%] font-bold text-[32px] lg:text-[48px] text-[#f5f5f7] leading-tight">
                     {slide.title}
                   </p>
-                  <p className="w-full lg:w-[450px] font-normal text-[14px] text-[#f5f5f7] lg:leading-loose">
+                  <p className="w-full lg:w-[450px] font-normal text-[15px] text-[#f5f5f7] lg:leading-loose">
                     {slide.description}
                   </p>
                 </div>
                 <div className="flex justify-start">
-                  <button className="px-4 py-2 text-[#f5f5f7] border border-[#f5f5f7] text-[14px] hover:scale-105 transition ease-in-out hover:bg-[#f5f5f7] hover:text-[#1d1d1f] custom-hover-transition">
+                  <button className="px-4 py-2 text-[#f5f5f7] border border-[#f5f5f7] text-[15px] hover:scale-105 transition ease-in-out hover:bg-[#f5f5f7] hover:text-[#1d1d1f] custom-hover-transition">
                     {slide.buttonText}
                   </button>
                 </div>

@@ -18,7 +18,7 @@ const Footer = () => {
               className="w-full h-[30px] bg-transparent px-4 placeholder-[#cda78f] custom-input italic text-[14px] lg:text-[16px]"
               placeholder="enter email address"
             />
-            <button className="px-2 py-1 text-[#f5f5f7] bg-[#cda78f] text-[14px] lg:text-[16px]">
+            <button className="px-2 py-1 text-[#f5f5f7] bg-[#cda78f] text-[14px] lg:text-[16px] hover:scale-105 transition ease-in-out">
               Join Now
             </button>
           </div>

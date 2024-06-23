@@ -85,7 +85,7 @@ const Category = () => {
               <img src={item.src} alt={item.alt} className="w-full" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-[calc(100%-20px)] h-[calc(100%-20px)] bg-[#d9d9d9] bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-1000 ease-in-out flex items-center justify-center">
-                  <span className="text-white group-hover:text-black text-[18px] font-semibold border-t border-b py-1 px-2 group-hover:border-black">
+                  <span className="text-white group-hover:text-black text-[20px] font-semibold border-t border-b py-1 px-2 group-hover:border-black">
                     {item.text}
                   </span>
                 </div>

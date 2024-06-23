@@ -44,7 +44,7 @@ const Features = () => {
         </div>
       </div>
       <div className="w-full flex justify-center items-center mt-8">
-        <button className="px-4 py-2 text-[#cda78f] border border-[#cda78f] text-[14px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f] hover:text-[#ffffff] custom-hover-transition">
+        <button className="px-4 py-2 text-[#cda78f] border border-[#cda78f] text-[14px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f] hover:text-[#ffffff] custom-hover-transition font-bold">
           SHOW MORE
         </button>
       </div>
