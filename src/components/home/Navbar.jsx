@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/vlogo.png";
 import { RiMenu2Fill } from "react-icons/ri";
 import search from "../../assets/search-line.svg";
@@ -9,6 +10,7 @@ import { IoMdAdd } from "react-icons/io";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -65,17 +67,35 @@ const Navbar = () => {
             </div>
           </div>
           <div className="w-full flex justify-center">
-            <img src={logo} alt="" width={150} className="sm:hidden" />
-            <img src={logo} alt="" width={150} className="hidden lg:block" />
+            <img
+              src={logo}
+              alt=""
+              width={150}
+              className="sm:hidden"
+              onClick={() => navigate(`/`)}
+            />
+            <img
+              src={logo}
+              alt=""
+              width={150}
+              className="hidden lg:block"
+              onClick={() => navigate(`/`)}
+            />
           </div>
-          <div className="w-full hidden lg:flex gap-4 justify-end">
+          <div className="w-full hidden lg:flex gap-4 justify-end items-center">
             <p className="font-normal text-[16px] cursor-pointer">My Account</p>
             <p className="font-normal text-[16px] cursor-pointer">Wishlist</p>
-            <p className="font-normal text-[16px] cursor-pointer">View cart</p>
+            <div className="flex justify-between items-end gap-[1px] cursor-pointer">
+              <p className="font-normal text-[16px]">View cart</p>
+              <p className="font-bold text-[16px] text-red-500">4</p>
+            </div>
           </div>
-          <div className="sm:hidden w-full flex gap-[12px] justify-end">
+          <div className="sm:hidden w-full flex gap-[12px] justify-end items-center">
             <VscAccount size={18} style={{ strokeWidth: 0 }} />
-            <CiShoppingCart size={20} style={{ strokeWidth: 0 }} />
+            <div className="flex justify-between items-end gap-[1px] cursor-pointer">
+              <CiShoppingCart size={20} style={{ strokeWidth: 0 }} />
+              <p className="font-bold text-[16px] text-red-500">4</p>
+            </div>
           </div>
         </div>
         {/* CONTENT */}

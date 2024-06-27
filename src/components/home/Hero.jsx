@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import img from "../../assets/hero_image.png";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-full relative flex flex-col gap-2 mt-8">
       <div
@@ -13,7 +15,10 @@ const Hero = () => {
             Everything You Need In One Place
           </p>
           <div className="slide-animation flex justify-start lg:justify-center">
-            <button className="px-4 py-2 text-white border border-[#cda78f] text-[14px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f] custom-hover-transition">
+            <button
+              className="px-4 py-2 text-white border border-[#cda78f] text-[14px] hover:scale-105 transition ease-in-out hover:bg-[#cda78f] custom-hover-transition"
+              onClick={() => navigate(`/product`)}
+            >
               SHOP NOW
             </button>
           </div>
