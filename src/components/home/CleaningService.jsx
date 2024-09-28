@@ -13,14 +13,14 @@ const slides = [
   },
   {
     backgroundImage: shopping,
-    title: "Office Cleaning Services",
+    title: "Book a Shopper",
     description:
       "Keep your workplace spotless with our reliable and thorough office cleaning services.",
     buttonText: "Learn More",
   },
   {
     backgroundImage: gifts,
-    title: "Deep Cleaning Services",
+    title: "Customize Gifts",
     description:
       "Our deep cleaning services ensure every corner of your home is immaculate.",
     buttonText: "Book Now",

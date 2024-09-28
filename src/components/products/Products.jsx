@@ -8,6 +8,7 @@ import product from "../../assets/product.png";
 
 const Products = () => {
   const productArray = Array(18).fill(0);
+
   return (
     <div>
       <div className="w-full fixed top-0 bg-[#eeebe8] z-20 drop-shadow-md">
@@ -15,18 +16,24 @@ const Products = () => {
       </div>
       <hr />
       <div className="w-full px-[20px] lg:px-[10%] py-10 flex flex-col lg:flex-row justify-between lg:justify-center gap-8 lg:items-center mt-24">
-        <div className="flex lg:justify-center items-center gap-4 flex-wrap">
-          <p className="text-[14px] px-4 py-2 border border-[#CDA78F] rounded-full hover:text-white hover:bg-[#CDA78F] cursor-pointer transition ease-in-out">
-            Kitchenwares
+        <div className="flex lg:justify-center items-center gap-2 flex-wrap">
+          <p className="text-[14px] px-4 py-2 bg-[#CDA78F] rounded-full text-white">
+            All
           </p>
           <p className="text-[14px] px-4 py-2 border border-[#CDA78F] rounded-full hover:text-white hover:bg-[#CDA78F] cursor-pointer transition ease-in-out">
-            Home Decor
+            Bathroom Essentials
+          </p>
+          <p className="text-[14px] px-4 py-2 border border-[#CDA78F] rounded-full hover:text-white hover:bg-[#CDA78F] cursor-pointer transition ease-in-out">
+            Home Fragrance
+          </p>
+          <p className="text-[14px] px-4 py-2 border border-[#CDA78F] rounded-full hover:text-white hover:bg-[#CDA78F] cursor-pointer transition ease-in-out">
+            Kitchenwares
           </p>
           <p className="text-[14px] px-4 py-2 border border-[#CDA78F] rounded-full hover:text-white hover:bg-[#CDA78F] cursor-pointer transition ease-in-out">
             Furnitures
           </p>
           <p className="text-[14px] px-4 py-2 border border-[#CDA78F] rounded-full hover:text-white hover:bg-[#CDA78F] cursor-pointer transition ease-in-out">
-            Bathroom Essentials
+            Home Decor
           </p>
           <p className="text-[14px] px-4 py-2 border border-[#CDA78F] rounded-full hover:text-white hover:bg-[#CDA78F] cursor-pointer transition ease-in-out">
             Cleaning Essentials
@@ -34,9 +41,6 @@ const Products = () => {
 
           <p className="text-[14px] px-4 py-2 border border-[#CDA78F] rounded-full hover:text-white hover:bg-[#CDA78F] cursor-pointer transition ease-in-out">
             Laundry Essentials
-          </p>
-          <p className="text-[14px] px-4 py-2 border border-[#CDA78F] rounded-full hover:text-white hover:bg-[#CDA78F] cursor-pointer transition ease-in-out">
-            Home Fragrance
           </p>
         </div>
       </div>

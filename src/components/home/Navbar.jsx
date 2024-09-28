@@ -6,7 +6,7 @@ import search from "../../assets/search-line.svg";
 import { VscAccount } from "react-icons/vsc";
 import { CiShoppingCart } from "react-icons/ci";
 import { FiHeart } from "react-icons/fi";
-import { IoMdAdd } from "react-icons/io";
+import { IoIosClose } from "react-icons/io";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const Navbar = () => {
@@ -178,13 +178,14 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="drawer faded-in h-full" ref={menuRef}>
           <div className="drawer-content flex flex-col gap-4">
-            <div className="w-full flex justify-start items-center gap-2">
+            <div className="w-full flex justify-between items-center gap-2">
               <p
                 className="font-bold text-[14px] text-black cursor-pointer"
                 onClick={() => navigate(`/`)}
               >
                 HOME
               </p>
+              <IoIosClose onClick={toggleMenu} size={20} />
             </div>
             <div className="w-full flex justify-start items-center gap-2">
               <p
@@ -202,7 +203,7 @@ const Navbar = () => {
               onClick={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
-              <div className="w-full flex justify-between items-center">
+              <div className="w-full flex justify-start gap-2 items-center">
                 <p className="font-normal text-[14px] text-black cursor-pointer">
                   CATEGORIES
                 </p>
