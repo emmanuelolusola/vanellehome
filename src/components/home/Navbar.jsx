@@ -85,25 +85,25 @@ const Navbar = () => {
           <div className="w-full hidden lg:flex gap-4 justify-end items-center">
             <p className="font-normal text-[16px] cursor-pointer">My Account</p>
             <p className="font-normal text-[16px] cursor-pointer">Wishlist</p>
-            <div className="flex justify-between items-end gap-[1px] cursor-pointer">
-              <p className="font-normal text-[16px]">View cart</p>
-              <p className="font-bold text-[16px] text-red-500">4</p>
-            </div>
+            <p className="font-normal text-[16px]">View cart</p>
           </div>
           <div className="sm:hidden w-full flex gap-[12px] justify-end items-center">
             <VscAccount size={18} style={{ strokeWidth: 0 }} />
-            <div className="flex justify-between items-end gap-[1px] cursor-pointer">
-              <CiShoppingCart size={20} style={{ strokeWidth: 0 }} />
-              <p className="font-bold text-[16px] text-red-500">4</p>
-            </div>
+            <CiShoppingCart size={20} style={{ strokeWidth: 0 }} />
           </div>
         </div>
         {/* CONTENT */}
         <div className="hidden lg:flex justify-center gap-12">
-          <p className="font-bold text-[16px] text-black cursor-pointer hover-border-animation">
+          <p
+            className="font-bold text-[16px] text-black cursor-pointer hover-border-animation"
+            onClick={() => navigate(`/`)}
+          >
             HOME
           </p>
-          <p className="font-normal text-[16px] text-black cursor-pointer hover-border-animation">
+          <p
+            className="font-normal text-[16px] text-black cursor-pointer hover-border-animation"
+            onClick={() => navigate(`/about`)}
+          >
             ABOUT US
           </p>
           <div
@@ -121,30 +121,24 @@ const Navbar = () => {
               >
                 <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                   <p className="text-[16px]">KITCHENWARES</p>
-                  <IoMdAdd style={{ strokeWidth: 1 }} />
                 </div>
                 <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                   <p className="text-[16px]">BATHROOM ESSENTIALS</p>
-                  <IoMdAdd style={{ strokeWidth: 1 }} />
                 </div>
                 <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                   <p className="text-[16px]">CLEANING ESSENTIALS</p>
-                  <IoMdAdd style={{ strokeWidth: 1 }} />
                 </div>
                 <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                   <p className="text-[16px]">FURNITURES</p>
-                  <IoMdAdd style={{ strokeWidth: 1 }} />
                 </div>
                 <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                   <p className="text-[16px]">LAUNDRY ESSENTIALS</p>
                 </div>
                 <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                   <p className="text-[16px]">HOME DECOR</p>
-                  <IoMdAdd style={{ strokeWidth: 1 }} />
                 </div>
                 <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                   <p className="text-[16px]">HOME FRAGRANCE</p>
-                  <IoMdAdd style={{ strokeWidth: 1 }} />
                 </div>
               </div>
             )}
@@ -177,14 +171,18 @@ const Navbar = () => {
         <div className="drawer faded-in h-full" ref={menuRef}>
           <div className="drawer-content flex flex-col gap-4">
             <div className="w-full flex justify-start items-center gap-2">
-              {/* <MdOutlineKeyboardArrowRight /> */}
-              <p className="font-bold text-[14px] text-black cursor-pointer">
+              <p
+                className="font-bold text-[14px] text-black cursor-pointer"
+                onClick={() => navigate(`/`)}
+              >
                 HOME
               </p>
             </div>
             <div className="w-full flex justify-start items-center gap-2">
-              {/* <MdOutlineKeyboardArrowRight /> */}
-              <p className="font-normal text-[14px] text-black cursor-pointer">
+              <p
+                className="font-normal text-[14px] text-black cursor-pointer"
+                onClick={() => navigate(`/about`)}
+              >
                 ABOUT US
               </p>
             </div>
@@ -211,78 +209,39 @@ const Navbar = () => {
                 >
                   <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                     <p className="text-[14px]">KITCHENWARES</p>
-                    <MdOutlineKeyboardArrowRight
-                      size={22}
-                      // className={`cursor-pointer transform transition-transform duration-200 ${
-                      //   isDropdownOpen ? "rotate-90" : ""
-                      // }`}
-                    />
                   </div>
                   <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                     <p className="text-[14px]">BATHROOM ESSENTIALS</p>
-                    <MdOutlineKeyboardArrowRight
-                      size={22}
-                      // className={`cursor-pointer transform transition-transform duration-200 ${
-                      //   isDropdownOpen ? "rotate-90" : ""
-                      // }`}
-                    />
                   </div>
                   <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                     <p className="text-[14px]">CLEANING ESSENTIALS</p>
-                    <MdOutlineKeyboardArrowRight
-                      size={22}
-                      // className={`cursor-pointer transform transition-transform duration-200 ${
-                      //   isDropdownOpen ? "rotate-90" : ""
-                      // }`}
-                    />
                   </div>
                   <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                     <p className="text-[14px]">FURNITURES</p>
-                    <MdOutlineKeyboardArrowRight
-                      size={22}
-                      // className={`cursor-pointer transform transition-transform duration-200 ${
-                      //   isDropdownOpen ? "rotate-90" : ""
-                      // }`}
-                    />
                   </div>
                   <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                     <p className="text-[14px]">LAUNDRY ESSENTIALS</p>
                   </div>
                   <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                     <p className="text-[14px]">HOME DECOR</p>
-                    <MdOutlineKeyboardArrowRight
-                      size={22}
-                      // className={`cursor-pointer transform transition-transform duration-200 ${
-                      //   isDropdownOpen ? "rotate-90" : ""
-                      // }`}
-                    />
                   </div>
                   <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
                     <p className="text-[14px]">HOME FRAGRANCE</p>
-                    <MdOutlineKeyboardArrowRight
-                      size={22}
-                      // className={`cursor-pointer transform transition-transform duration-200 ${
-                      //   isDropdownOpen ? "rotate-90" : ""
-                      // }`}
-                    />
                   </div>
                 </div>
               )}
             </div>
             <div className="w-full flex justify-start items-center gap-2">
-              {/* <MdOutlineKeyboardArrowRight /> */}
               <p className="font-normal text-[14px] text-black cursor-pointer">
                 CUSTOMIZE GIFTS
               </p>
             </div>
             <div className="w-full flex justify-start items-center gap-2">
-              {/* <MdOutlineKeyboardArrowRight /> */}
               <p className="font-normal text-[14px] text-black cursor-pointer">
                 BOOK A SHOPPER
               </p>
             </div>
             <div className="w-full flex justify-start items-center gap-2">
-              {/* <MdOutlineKeyboardArrowRight /> */}
               <p className="font-normal text-[14px] text-black cursor-pointer">
                 CLEANING SERVICES
               </p>
