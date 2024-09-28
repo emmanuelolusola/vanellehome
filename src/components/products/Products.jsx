@@ -4,16 +4,17 @@ import Footer from "../home/Footer";
 import { FiHeart } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
-import { IoFilter } from "react-icons/io5";
 import product from "../../assets/product.png";
 
 const Products = () => {
   const productArray = Array(18).fill(0);
   return (
     <div>
-      <Navbar />
+      <div className="w-full fixed top-0 bg-[#eeebe8] z-20 drop-shadow-md">
+        <Navbar />
+      </div>
       <hr />
-      <div className="w-full px-[20px] lg:px-[10%] py-10 flex flex-col lg:flex-row justify-between lg:justify-center gap-8 lg:items-center">
+      <div className="w-full px-[20px] lg:px-[10%] py-10 flex flex-col lg:flex-row justify-between lg:justify-center gap-8 lg:items-center mt-24">
         <div className="flex lg:justify-center items-center gap-4 flex-wrap">
           <p className="text-[14px] px-4 py-2 border border-[#CDA78F] rounded-full hover:text-white hover:bg-[#CDA78F] cursor-pointer transition ease-in-out">
             Kitchenwares

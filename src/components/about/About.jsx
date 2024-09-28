@@ -5,9 +5,11 @@ import Footer from "../home/Footer";
 const About = () => {
   return (
     <div className="w-full lg:h-screen flex flex-col justify-between">
-      <Navbar />
+      <div className="w-full fixed top-0 bg-[#eeebe8] z-20 drop-shadow-md">
+        <Navbar />
+      </div>
       <hr />
-      <div className="w-full flex flex-col gap-4 px-[20px] lg:w-[600px] lg:mx-auto pt-10 pb-20">
+      <div className="w-full flex flex-col gap-4 px-[20px] lg:w-[600px] lg:mx-auto pt-10 pb-20 mt-28">
         <p className="text-[24px] font-bold">About Us</p>
         <p className="text-justify">
           Welcome to Vanelle Home, your premier destination for high-quality
