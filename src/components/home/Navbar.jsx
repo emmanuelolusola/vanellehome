@@ -11,6 +11,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const Navbar = () => {
   const navigate = useNavigate();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -37,6 +38,10 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const scrollToTop = () => {
+    window.scroll(0, 0);
   };
 
   return (
@@ -102,7 +107,10 @@ const Navbar = () => {
           </p>
           <p
             className="font-normal text-[16px] text-black cursor-pointer hover-border-animation"
-            onClick={() => navigate(`/about`)}
+            onClick={() => {
+              navigate(`/about`);
+              scrollToTop();
+            }}
           >
             ABOUT US
           </p>
@@ -181,7 +189,10 @@ const Navbar = () => {
             <div className="w-full flex justify-start items-center gap-2">
               <p
                 className="font-normal text-[14px] text-black cursor-pointer"
-                onClick={() => navigate(`/about`)}
+                onClick={() => {
+                  navigate(`/about`);
+                  scrollToTop();
+                }}
               >
                 ABOUT US
               </p>
