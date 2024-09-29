@@ -4,11 +4,15 @@ import Footer from "../home/Footer";
 import { FiHeart } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
-import product from "../../assets/product.png";
+import { CARDS } from "../../utils/constants";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
-  const productArray = Array(18).fill(0);
+  const navigate = useNavigate();
 
+  const scrollToTop = () => {
+    window.scroll(0, 0);
+  };
   return (
     <div>
       <div className="w-full fixed top-0 bg-[#eeebe8] z-20 drop-shadow-md">
@@ -45,11 +49,15 @@ const Products = () => {
         </div>
       </div>
       <div className="flex flex-wrap justify-center gap-4 lg:px-[10%] pb-10 lg:pb-20">
-        {productArray.map((_, index) => (
+        {CARDS.map((_, index) => (
           <div key={index} className="flex flex-col gap-4 mt-4 items-center">
             <div
               className="relative w-[38vw] lg:w-[18vw] h-[25vh] lg:h-[40vh] bg-center bg-cover flex justify-center items-center hover:scale-105 transition ease-in-out border border-[#00000010]"
-              style={{ backgroundImage: `url(${product})` }}
+              style={{ backgroundImage: `url(${_.backgroundImage})` }}
+              onClick={() => {
+                navigate(`/product/${_.id}`);
+                scrollToTop();
+              }}
             >
               <div className="absolute bottom-4 flex gap-2">
                 <div className="bg-white rounded-full flex justify-center items-center p-2 cursor-pointer hover:scale-125 transition ease-in-out">
@@ -63,9 +71,9 @@ const Products = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col items-center">
-              <p className="text-[14px] font-normal">Product Name</p>
-              <p className="font-bold text-[#cda78f] text-[14px]">#25,000</p>
+            <div className="flex flex-col w-[38vw] lg:w-[18vw] lg:items-center">
+              <p className="text-[14px] font-normal">{_.title}</p>
+              <p className="font-bold text-[#cda78f] text-[14px]">{_.price}</p>
             </div>
           </div>
         ))}
