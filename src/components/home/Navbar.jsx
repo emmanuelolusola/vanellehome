@@ -157,7 +157,13 @@ const Navbar = () => {
           <p className="font-normal text-[16px] text-black cursor-pointer hover-border-animation">
             BOOK A SHOPPER
           </p>
-          <p className="font-normal text-[16px] text-vlack cursor-pointer hover-border-animation">
+          <p
+            className="font-normal text-[16px] text-vlack cursor-pointer hover-border-animation"
+            onClick={() => {
+              navigate(`/cleaning-services`);
+              scrollToTop();
+            }}
+          >
             CLEANING SERVICES
           </p>
         </div>
@@ -254,7 +260,13 @@ const Navbar = () => {
               </p>
             </div>
             <div className="w-full flex justify-start items-center gap-2">
-              <p className="font-normal text-[14px] text-black cursor-pointer">
+              <p
+                className="font-normal text-[14px] text-black cursor-pointer"
+                onClick={() => {
+                  navigate(`/cleaning-services`);
+                  scrollToTop();
+                }}
+              >
                 CLEANING SERVICES
               </p>
             </div>
