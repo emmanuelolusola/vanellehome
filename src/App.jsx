@@ -5,6 +5,7 @@ import Navbar from "./components/home/Navbar";
 import Products from "./components/products/Products";
 import About from "./components/about/About";
 import Product from "./components/products/Product";
+import CleaningServices from "./components/cleaning/CleaningServices";
 
 function App() {
   return (
@@ -16,6 +17,11 @@ function App() {
           <Route path="/product" element={<Products />} exact />
           <Route path="/product/:id" element={<Product />} exact />
           <Route path="/about" element={<About />} exact />
+          <Route
+            path="/cleaning-services"
+            element={<CleaningServices />}
+            exact
+          />
         </Routes>
       </Router>
     </>

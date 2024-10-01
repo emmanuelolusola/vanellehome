@@ -2,6 +2,7 @@ import React from "react";
 import cleaning from "../../assets/cleaning.jpg";
 import shopping from "../../assets/shopping.jpg";
 import gifts from "../../assets/customize_gift.jpg";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -28,6 +29,11 @@ const slides = [
 ];
 
 const CleaningService = () => {
+  const navigate = useNavigate();
+  const scrollToTop = () => {
+    window.scroll(0, 0);
+  };
+
   return (
     <div className="flex flex-col gap-8 py-20">
       <div className="w-full flex justify-center">
@@ -39,8 +45,14 @@ const CleaningService = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="w-full h-[350px] lg:h-[500px] bg-cover bg-center relative py-10"
+            className="w-full h-[350px] lg:h-[500px] bg-cover bg-center relative py-10 cursor-pointer"
             style={{ backgroundImage: `url(${slide.backgroundImage})` }}
+            onClick={() => {
+              navigate(`/cleaning-services`)
+                ? slide.title === "Home Cleaning Services"
+                : null;
+              scrollToTop();
+            }}
           >
             <div className="absolute inset-0 bg-black opacity-70"></div>
             <div className="w-[90vw] h-full lg:w-[80%] px-[24px] lg:px-0 lg:mx-auto flex justify-start items-end relative">
