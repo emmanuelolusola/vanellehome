@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../home/Navbar";
 import Footer from "../home/Footer";
 import { useNavigate } from "react-router-dom";
+import { IoMdShareAlt } from "react-icons/io";
 
 const CleaningServices = () => {
   const navigate = useNavigate();
@@ -68,9 +69,20 @@ const CleaningServices = () => {
             <p className="text-justify">
               To schedule your consultation, please contact Vanelle Home
               Cleaning Services at{" "}
-              <span className="underline font-bold">(+234) 701-889-9382</span>{" "}
+              <span className="underline font-bold cursor-pointer">
+                (+234) 701-889-9382
+              </span>{" "}
               or fill out our online form for a free estimate.
             </p>
+            <div className="hidden md:flex flex-col gap-4 pt-4">
+              <div className="w-full bg-[#cda78f] h-12 flex justify-center items-center gap-4 cursor-pointer">
+                <p className="text-white font-bold text-[14px]">CONTACT US</p>
+              </div>
+              <div className="w-full border border-[#000] h-12 flex justify-center items-center gap-4 cursor-pointer">
+                <IoMdShareAlt color="#000" />
+                <p className="text-[#000] font-bold text-[14px]">SHARE</p>
+              </div>
+            </div>
           </div>
           <div className="w-full flex flex-col gap-4">
             <p className="text-[24px] font-bold text-[#cda78f]">
@@ -123,6 +135,15 @@ const CleaningServices = () => {
               consultation and discover the joy of coming home to a spotless
               sanctuary.
             </p>
+            <div className="sm:hidden flex flex-col gap-4 pt-4">
+              <div className="w-full bg-[#cda78f] h-12 flex justify-center items-center gap-4 cursor-pointer">
+                <p className="text-white font-bold text-[14px]">CONTACT US</p>
+              </div>
+              <div className="w-full border border-[#000] h-12 flex justify-center items-center gap-4 cursor-pointer">
+                <IoMdShareAlt color="#000" />
+                <p className="text-[#000] font-bold text-[14px]">SHARE</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
