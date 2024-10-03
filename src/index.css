@@ -139,10 +139,11 @@ body {
   z-index: 1000;
 }
 
-/* .drawer.open {
-  left: 0;
-} */
-
 .drawer-content {
   padding: 20px;
+}
+
+div.react-responsive-modal-modal {
+  max-width: 1500px;
+  border-radius: 20px;
 }

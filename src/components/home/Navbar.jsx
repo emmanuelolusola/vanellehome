@@ -90,11 +90,26 @@ const Navbar = () => {
           <div className="w-full hidden lg:flex gap-4 justify-end items-center">
             <p className="font-normal text-[16px] cursor-pointer">My Account</p>
             <p className="font-normal text-[16px] cursor-pointer">Wishlist</p>
-            <p className="font-normal text-[16px]">View cart</p>
+            <p
+              className="font-normal text-[16px] cursor-pointer"
+              onClick={() => {
+                navigate(`/cart`);
+                scrollToTop();
+              }}
+            >
+              View cart
+            </p>
           </div>
           <div className="sm:hidden w-full flex gap-[12px] justify-end items-center">
             <VscAccount size={18} style={{ strokeWidth: 0 }} />
-            <CiShoppingCart size={20} style={{ strokeWidth: 0 }} />
+            <CiShoppingCart
+              size={20}
+              style={{ strokeWidth: 0 }}
+              onClick={() => {
+                navigate(`/cart`);
+                scrollToTop();
+              }}
+            />
           </div>
         </div>
         {/* CONTENT */}
