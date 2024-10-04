@@ -55,11 +55,6 @@ const Navbar = () => {
               className="sm:hidden"
               onClick={toggleMenu}
             />
-            <FiHeart
-              className="sm:hidden"
-              size={18}
-              style={{ strokeWidth: 1 }}
-            />
             <div className="hidden w-[80%] bg-[#00000010] px-4 lg:px-6 py-2 lg:py-2 lg:flex justify-between items-center gap-2 lg:gap-4 rounded-full">
               <img src={search} alt="" width={18} />
               <input
@@ -88,7 +83,7 @@ const Navbar = () => {
             />
           </div>
           <div className="w-full hidden lg:flex gap-4 justify-end items-center">
-            <p className="font-normal text-[16px] cursor-pointer">My Account</p>
+            {/* <p className="font-normal text-[16px] cursor-pointer">My Account</p> */}
             <p className="font-normal text-[16px] cursor-pointer">Wishlist</p>
             <p
               className="font-normal text-[16px] cursor-pointer"
@@ -101,9 +96,14 @@ const Navbar = () => {
             </p>
           </div>
           <div className="sm:hidden w-full flex gap-[12px] justify-end items-center">
-            <VscAccount size={18} style={{ strokeWidth: 0 }} />
+            {/* <VscAccount size={18} style={{ strokeWidth: 0 }} /> */}
+            <FiHeart
+              className="sm:hidden"
+              size={18}
+              style={{ strokeWidth: 1 }}
+            />
             <CiShoppingCart
-              size={20}
+              size={22}
               style={{ strokeWidth: 0 }}
               onClick={() => {
                 navigate(`/cart`);
@@ -169,7 +169,13 @@ const Navbar = () => {
           <p className="font-normal text-[16px] text-black cursor-pointer hover-border-animation">
             CUSTOMIZE GIFTS
           </p>
-          <p className="font-normal text-[16px] text-black cursor-pointer hover-border-animation">
+          <p
+            className="font-normal text-[16px] text-black cursor-pointer hover-border-animation"
+            onClick={() => {
+              navigate(`/book-a-shopper`);
+              scrollToTop();
+            }}
+          >
             BOOK A SHOPPER
           </p>
           <p
@@ -270,7 +276,13 @@ const Navbar = () => {
               </p>
             </div>
             <div className="w-full flex justify-start items-center gap-2">
-              <p className="font-normal text-[14px] text-black cursor-pointer">
+              <p
+                className="font-normal text-[14px] text-black cursor-pointer"
+                onClick={() => {
+                  navigate(`/book-a-shopper`);
+                  scrollToTop();
+                }}
+              >
                 BOOK A SHOPPER
               </p>
             </div>

@@ -7,6 +7,7 @@ import About from "./components/about/About";
 import Product from "./components/products/Product";
 import CleaningServices from "./components/cleaning/CleaningServices";
 import Cart from "./components/cart/Cart";
+import BookAShopper from "./components/shopper/BookAShopper";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             element={<CleaningServices />}
             exact
           />
+          <Route path="/book-a-shopper" element={<BookAShopper />} exact />
         </Routes>
       </Router>
     </>

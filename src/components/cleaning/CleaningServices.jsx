@@ -3,6 +3,7 @@ import Navbar from "../home/Navbar";
 import Footer from "../home/Footer";
 import { useNavigate } from "react-router-dom";
 import { IoMdShareAlt } from "react-icons/io";
+import img from "../../assets/cleaning.jpg";
 
 const CleaningServices = () => {
   const navigate = useNavigate();
@@ -15,25 +16,32 @@ const CleaningServices = () => {
       <div className="w-full fixed top-0 bg-[#eeebe8] z-20 drop-shadow-md">
         <Navbar />
       </div>
-      <hr />
-      <div className="w-full px-[20px] lg:px-[10%] pt-10 pb-20 mt-24 flex flex-col gap-4">
-        <p
-          className="text-[18px] underline cursor-pointer"
-          onClick={() => {
-            navigate(-1);
-            scrollToTop();
-          }}
-        >
-          Back
-        </p>
-        <div className="w-full py-4 flex flex-col gap-2">
-          <p className="text-[32px] lg:text-center lg:text-[48px] font-bold">
-            Home Cleaning Services
+      <div
+        className="w-full mt-24 h-[200px] lg:h-[300px] bg-cover bg-center relative py-10 cursor-pointer"
+        style={{ backgroundImage: `url(${img})` }}
+      >
+        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="w-full px-[20px] lg:px-[10%] flex flex-col justify-between gap-8 lg:gap-20 relative">
+          <p
+            className="lg:text-[18px] underline cursor-pointer text-white"
+            onClick={() => {
+              navigate(-1);
+              scrollToTop();
+            }}
+          >
+            Back
           </p>
-          <p className="lg:text-center italic w-full lg:text-center">
-            Welcome to Vanelle Home Cleaning Services!
-          </p>
+          <div className="w-full flex flex-col gap-0">
+            <p className="text-[32px] lg:text-center lg:text-[48px] font-bold text-white">
+              Home Cleaning Services
+            </p>
+            <p className="lg:text-center italic w-full lg:text-center text-white">
+              Welcome to Vanelle Home Cleaning Services!
+            </p>
+          </div>
         </div>
+      </div>
+      <div className="w-full px-[20px] lg:px-[10%] pt-10 pb-20 flex flex-col gap-4">
         <div className="w-full lg:w-[80%] lg:mx-auto flex flex-col lg:flex-row gap-10 lg:gap-24 lg:p-8 lg:justify-between">
           <div className="w-full flex flex-col gap-4">
             <p className="text-justify">

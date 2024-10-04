@@ -56,7 +56,7 @@ const Cart = () => {
         <Navbar />
       </div>
       <hr />
-      <div className="w-full flex flex-col lg:flex-row mt-24 lg:mt-0 pb-20 lg:justify-between lg:gap-30 lg:items-start">
+      <div className="w-full flex flex-col lg:flex-row mt-24 lg:mt-0 pb-10 lg:justify-between lg:gap-30 lg:items-start">
         <div className="w-full px-[20px] lg:px-[10%] pt-10 flex flex-col gap-4">
           <p
             className="text-[18px] underline cursor-pointer"
@@ -128,17 +128,19 @@ const Cart = () => {
             Summary
           </p>
           <div className="flex flex-col gap-4">
-            <div className="w-full flex flex-col gap-4 justify-between">
-              {products.map((product) => (
-                <div key={product.id} className="w-full flex justify-between">
-                  <div className="flex gap-2">
-                    <p>{product.title}</p>
-                    <p>({product.quantity})</p>
+            {products.length === 0 ? null : (
+              <div className="w-full flex flex-col gap-4 justify-between">
+                {products.map((product) => (
+                  <div key={product.id} className="w-full flex justify-between">
+                    <div className="flex gap-2">
+                      <p>{product.title}</p>
+                      <p>({product.quantity})</p>
+                    </div>
+                    <p>#{product.price}</p>
                   </div>
-                  <p>#{product.price}</p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
             <div className="w-full flex justify-between">
               <p className="font-bold text-[24px]">Total</p>
               <p className="text-[24px]">#{totalPrice}</p>
