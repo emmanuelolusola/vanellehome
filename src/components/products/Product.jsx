@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CARDS } from "../../utils/constants";
 import Navbar from "../home/Navbar";
 import { IoAdd } from "react-icons/io5";
 import { IoMdShareAlt } from "react-icons/io";
@@ -10,42 +9,47 @@ import { FaCheck } from "react-icons/fa";
 const Product = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
   const [product, setProduct] = useState();
   const [isItemAdded, setIsItemAdded] = useState(false);
 
   useEffect(() => {
-    const fetchProduct = () => {
+    const fetchProduct = async () => {
       try {
-        const res = CARDS.find((card) => card.id === id);
-        if (res) {
-          setProduct(res);
-
-          const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-          const isAdded = cartItems.some((item) => item.id === res.id);
-          setIsItemAdded(isAdded);
-        } else {
-          console.log(`Product with id ${id} not found`);
+        setLoading(true);
+        const res = await fetch(`http://localhost:3000/product/${id}`);
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
         }
+        const data = await res.json();
+        setProduct(data);
+
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const isAdded = cartItems.some((item) => item.id === data.ID);
+        setIsItemAdded(isAdded);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
+
     fetchProduct();
   }, [id]);
 
-  if (!product) {
-    return null;
-  }
+  // if (!product) {
+  //   return null;
+  // }
 
   const handleAddToCart = () => {
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
     const item = {
       id: product.id,
-      title: product.title,
-      price: product.price,
-      image: product.backgroundImage,
+      title: product.Name,
+      price: product.Price,
+      image: product.Image[0].url,
     };
 
     cartItems.push(item);
@@ -64,63 +68,74 @@ const Product = () => {
         <Navbar />
       </div>
       <hr />
-      <div className="w-full px-[20px] lg:px-[10%] py-10 mt-24 flex flex-col gap-4">
-        <p
-          className="text-[18px] underline cursor-pointer"
-          onClick={() => {
-            navigate(-1);
-            scrollToTop();
-          }}
-        >
-          Back
-        </p>
-        <div className="w-full lg:w-[80%] lg:mx-auto flex flex-col lg:flex-row gap-4 lg:gap-20 lg:justify-between lg:items-center">
-          <img
-            src={product.backgroundImage}
-            alt={product.title}
-            className="w-full border border-b-1"
-          />
-          <div className="w-full flex flex-col gap-4">
-            <div className="w-full flex flex-col">
-              <p className="font-bold text-[24px] lg:text-[48px]">
-                {product.title}
-              </p>
-              <p className="text-[#cda78f] text-[24px] lg:text-[48px] font-bold">
-                #{product.price}
-              </p>
-              <p className="text-[14px] lg:text-[18px] text-justify">
-                {product.description}
-              </p>
-            </div>
-            <div
-              className={`w-full lg:w-[200px] h-12 flex justify-center items-center gap-2 cursor-pointer ${
-                isItemAdded ? "bg-[#cda78f]" : "bg-[#cda78f]"
-              }`}
-              onClick={!isItemAdded ? handleAddToCart : null}
-            >
-              {isItemAdded ? (
-                <>
-                  <FaCheck color="white" />
-                  <p className="text-white font-bold text-[14px]">
-                    ADDED TO CART
-                  </p>
-                </>
-              ) : (
-                <>
-                  <IoAdd color="white" size={20} />
-                  <p className="text-white font-bold text-[14px]">
-                    ADD TO CART
-                  </p>
-                </>
-              )}
-            </div>
-            <div className="w-full lg:w-[200px] border border-[#000] h-12 flex justify-center items-center gap-2 cursor-pointer">
-              <IoMdShareAlt color="#000" />
-              <p className="text-[#000] font-bold text-[14px]">SHARE</p>
+      {loading ? (
+        <div className="w-full h-[80vh] flex justify-center items-center">
+          <div
+            className="w-8 h-8 border-4 border-t-4 border-[#cda78f] rounded-full animate-spin"
+            style={{
+              borderTopColor: "transparent",
+            }}
+          ></div>
+        </div>
+      ) : (
+        <div className="w-full px-[20px] lg:px-[10%] py-10 mt-24 flex flex-col gap-4">
+          <p
+            className="text-[18px] underline cursor-pointer"
+            onClick={() => {
+              navigate(-1);
+              scrollToTop();
+            }}
+          >
+            Back
+          </p>
+          <div className="w-full lg:w-[80%] lg:mx-auto flex flex-col lg:flex-row gap-4 lg:gap-20 lg:justify-between lg:items-center">
+            <img
+              src={product.Image[0].url}
+              alt={product.Name}
+              className="w-full lg:w-[600px] border border-b-1"
+            />
+            <div className="w-full flex flex-col gap-4">
+              <div className="w-full flex flex-col">
+                <p className="font-bold text-[24px] lg:text-[36px]">
+                  {product.Name}
+                </p>
+                <p className="text-[#cda78f] text-[24px] lg:text-[36px] font-bold">
+                  #{product.Price}
+                </p>
+                <p className="text-[14px] lg:text-[16px] text-justify">
+                  {product.Description}
+                </p>
+              </div>
+              <div
+                className={`w-full lg:w-[200px] h-12 flex justify-center items-center gap-2 cursor-pointer ${
+                  isItemAdded ? "bg-[#cda78f]" : "bg-[#cda78f]"
+                }`}
+                onClick={!isItemAdded ? handleAddToCart : null}
+              >
+                {isItemAdded ? (
+                  <>
+                    <FaCheck color="white" />
+                    <p className="text-white font-bold text-[14px]">
+                      ADDED TO CART
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <IoAdd color="white" size={20} />
+                    <p className="text-white font-bold text-[14px]">
+                      ADD TO CART
+                    </p>
+                  </>
+                )}
+              </div>
+              <div className="w-full lg:w-[200px] border border-[#000] h-12 flex justify-center items-center gap-2 cursor-pointer">
+                <IoMdShareAlt color="#000" />
+                <p className="text-[#000] font-bold text-[14px]">SHARE</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       <Footer />
     </div>
   );

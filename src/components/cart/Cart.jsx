@@ -51,12 +51,12 @@ const Cart = () => {
   );
 
   return (
-    <div className="w-full lg:h-screen flex flex-col justify-between">
+    <div className="w-full lg:h-screen lg:mt-24 flex flex-col justify-between">
       <div className="w-full fixed top-0 bg-[#eeebe8] z-20 drop-shadow-md">
         <Navbar />
       </div>
       <hr />
-      <div className="w-full flex flex-col lg:flex-row mt-24 lg:mt-0 pb-10 lg:justify-between lg:gap-30 lg:items-start">
+      <div className="w-full h-full flex flex-col lg:flex-row mt-24 lg:mt-0 pb-10 lg:justify-between lg:gap-30 lg:items-start">
         <div className="w-full px-[20px] lg:px-[10%] pt-10 flex flex-col gap-4">
           <p
             className="text-[18px] underline cursor-pointer"
@@ -88,7 +88,7 @@ const Cart = () => {
                         <p className="text-[12px]">({product.quantity})</p>
                       </div>
                       <p className="text-[14px] text-[#cda78f] font-bold">
-                        #{product.price}
+                        #{product.basePrice}
                       </p>
                     </div>
                   </div>
