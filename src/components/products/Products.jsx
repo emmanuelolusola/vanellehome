@@ -4,7 +4,7 @@ import Footer from "../home/Footer";
 import { FiHeart } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -12,11 +12,14 @@ const Products = () => {
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/product");
+        const response = await fetch(
+          "https://vanellehomebackendservices.onrender.com/product"
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch products");
         }
@@ -31,6 +34,12 @@ const Products = () => {
 
     fetchProducts();
   }, []);
+  useEffect(() => {
+    const category = searchParams.get("category");
+    if (category) {
+      setSelectedCategory(category);
+    }
+  }, [searchParams]);
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);

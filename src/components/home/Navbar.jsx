@@ -142,25 +142,67 @@ const Navbar = () => {
                 ref={dropdownRef}
                 className="absolute top-full left-0 mt-0 w-[300px] bg-[#eeebe8] shadow-lg z-10 p-4 text-black"
               >
-                <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                <div
+                  className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                  onClick={() => {
+                    navigate(`/product?category=${"Kitchenwares"}`);
+                    scrollToTop();
+                  }}
+                >
                   <p className="text-[16px]">KITCHENWARES</p>
                 </div>
-                <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                <div
+                  className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                  onClick={() => {
+                    navigate(`/product?category=${"Bathroom Essentials"}`);
+                    scrollToTop();
+                  }}
+                >
                   <p className="text-[16px]">BATHROOM ESSENTIALS</p>
                 </div>
-                <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                <div
+                  className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                  onClick={() => {
+                    navigate(`/product?category=${"Cleaning Essentials"}`);
+                    scrollToTop();
+                  }}
+                >
                   <p className="text-[16px]">CLEANING ESSENTIALS</p>
                 </div>
-                <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                <div
+                  className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                  onClick={() => {
+                    navigate(`/product?category=${"Furnitures"}`);
+                    scrollToTop();
+                  }}
+                >
                   <p className="text-[16px]">FURNITURES</p>
                 </div>
-                <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                <div
+                  className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                  onClick={() => {
+                    navigate(`/product?category=${"Laundry Essentials"}`);
+                    scrollToTop();
+                  }}
+                >
                   <p className="text-[16px]">LAUNDRY ESSENTIALS</p>
                 </div>
-                <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                <div
+                  className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                  onClick={() => {
+                    navigate(`/product?category=${"Home Decor"}`);
+                    scrollToTop();
+                  }}
+                >
                   <p className="text-[16px]">HOME DECOR</p>
                 </div>
-                <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                <div
+                  className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                  onClick={() => {
+                    navigate(`/product?category=${"Home Fragrance"}`);
+                    scrollToTop();
+                  }}
+                >
                   <p className="text-[16px]">HOME FRAGRANCE</p>
                 </div>
               </div>
@@ -246,25 +288,67 @@ const Navbar = () => {
                   ref={dropdownRef}
                   className="faded-in mt-0 w-full bg-[#eeebe8] z-10 p-2 text-black"
                 >
-                  <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                  <div
+                    className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                    onClick={() => {
+                      navigate(`/product?category=${"Kitchenwares"}`);
+                      scrollToTop();
+                    }}
+                  >
                     <p className="text-[14px]">KITCHENWARES</p>
                   </div>
-                  <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                  <div
+                    className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                    onClick={() => {
+                      navigate(`/product?category=${"Bathroom Essentials"}`);
+                      scrollToTop();
+                    }}
+                  >
                     <p className="text-[14px]">BATHROOM ESSENTIALS</p>
                   </div>
-                  <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                  <div
+                    className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                    onClick={() => {
+                      navigate(`/product?category=${"Cleaning Essentials"}`);
+                      scrollToTop();
+                    }}
+                  >
                     <p className="text-[14px]">CLEANING ESSENTIALS</p>
                   </div>
-                  <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                  <div
+                    className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                    onClick={() => {
+                      navigate(`/product?category=${"Furnitures"}`);
+                      scrollToTop();
+                    }}
+                  >
                     <p className="text-[14px]">FURNITURES</p>
                   </div>
-                  <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                  <div
+                    className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                    onClick={() => {
+                      navigate(`/product?category=${"Laundry Essentials"}`);
+                      scrollToTop();
+                    }}
+                  >
                     <p className="text-[14px]">LAUNDRY ESSENTIALS</p>
                   </div>
-                  <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                  <div
+                    className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                    onClick={() => {
+                      navigate(`/product?category=${"Home Decor"}`);
+                      scrollToTop();
+                    }}
+                  >
                     <p className="text-[14px]">HOME DECOR</p>
                   </div>
-                  <div className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer">
+                  <div
+                    className="w-full flex justify-between items-center p-2 hover:bg-white custom-hover-transition cursor-pointer"
+                    onClick={() => {
+                      navigate(`/product?category=${"Home Fragrance"}`);
+                      scrollToTop();
+                    }}
+                  >
                     <p className="text-[14px]">HOME FRAGRANCE</p>
                   </div>
                 </div>

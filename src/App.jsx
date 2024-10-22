@@ -8,11 +8,13 @@ import Product from "./components/products/Product";
 import CleaningServices from "./components/cleaning/CleaningServices";
 import Cart from "./components/cart/Cart";
 import BookAShopper from "./components/shopper/BookAShopper";
+import ScrollToTopOnRouteChange from "./ScrollToTopOnRouteChange";
 
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTopOnRouteChange />
         <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/" element={<Navbar />} exact />

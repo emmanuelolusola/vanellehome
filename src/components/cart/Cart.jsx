@@ -131,7 +131,10 @@ const Cart = () => {
             {products.length === 0 ? null : (
               <div className="w-full flex flex-col gap-4 justify-between">
                 {products.map((product) => (
-                  <div key={product.id} className="w-full flex justify-between">
+                  <div
+                    key={product.id}
+                    className="w-full flex justify-between gap-4"
+                  >
                     <div className="flex gap-2">
                       <p>{product.title}</p>
                       <p>({product.quantity})</p>

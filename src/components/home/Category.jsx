@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import homedecor from "../../assets/homedecor.png";
 import bathr from "../../assets/bathr.png";
 import homefrag from "../../assets/homefrag.png";
+import { useNavigate } from "react-router-dom";
 
 const Category = () => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null);
   const items = [
@@ -46,6 +48,10 @@ const Category = () => {
     };
   }, []);
 
+  const scrollToTop = () => {
+    window.scroll(0, 0);
+  };
+
   return (
     <div className="w-full lg:w-[80%] lg:mx-auto px-[24px] lg:px-0 py-20">
       <div className="w-full flex justify-center">
@@ -56,7 +62,14 @@ const Category = () => {
       <div className="hidden lg:block">
         <div className="w-full flex flex-wrap gap-4 lg:justify-center mt-6">
           {items.map((item, index) => (
-            <div key={index} className="relative group">
+            <div
+              key={index}
+              className="relative group"
+              onClick={() => {
+                navigate(`/product?category=${item.text}`);
+                scrollToTop();
+              }}
+            >
               <img src={item.src} alt={item.alt} className="w-full" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-[calc(100%-20px)] h-[calc(100%-20px)] bg-[#d9d9d9] bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-1000 ease-in-out flex items-center justify-center">
@@ -81,6 +94,10 @@ const Category = () => {
               data-index={index}
               className="carousel-card inline-block w-[80%] lg:w-[calc(100%/3)] relative group"
               style={{ marginRight: "5%" }}
+              onClick={() => {
+                navigate(`/product?category=${item.text}`);
+                scrollToTop();
+              }}
             >
               <img src={item.src} alt={item.alt} className="w-full" />
               <div className="absolute inset-0 flex items-center justify-center">

@@ -18,7 +18,9 @@ const Product = () => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`http://localhost:3000/product/${id}`);
+        const res = await fetch(
+          `https://vanellehomebackendservices.onrender.com/product/${id}`
+        );
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
