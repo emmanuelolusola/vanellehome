@@ -208,9 +208,9 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <p className="font-normal text-[16px] text-black cursor-pointer hover-border-animation">
+          {/* <p className="font-normal text-[16px] text-black cursor-pointer hover-border-animation">
             CUSTOMIZE GIFTS
-          </p>
+          </p> */}
           <p
             className="font-normal text-[16px] text-black cursor-pointer hover-border-animation"
             onClick={() => {
@@ -354,11 +354,11 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            <div className="w-full flex justify-start items-center gap-2">
+            {/* <div className="w-full flex justify-start items-center gap-2">
               <p className="font-normal text-[14px] text-black cursor-pointer">
                 CUSTOMIZE GIFTS
               </p>
-            </div>
+            </div> */}
             <div className="w-full flex justify-start items-center gap-2">
               <p
                 className="font-normal text-[14px] text-black cursor-pointer"
