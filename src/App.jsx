@@ -9,6 +9,7 @@ import CleaningServices from "./components/cleaning/CleaningServices";
 import Cart from "./components/cart/Cart";
 import BookAShopper from "./components/shopper/BookAShopper";
 import ScrollToTopOnRouteChange from "./ScrollToTopOnRouteChange";
+import Wishlist from "./components/wishlist/Wishlist";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/product" element={<Products />} exact />
           <Route path="/product/:id" element={<Product />} exact />
           <Route path="/cart" element={<Cart />} exact />
+          <Route path="/wishlist" element={<Wishlist />} exact />
           <Route path="/about" element={<About />} exact />
           <Route
             path="/cleaning-services"

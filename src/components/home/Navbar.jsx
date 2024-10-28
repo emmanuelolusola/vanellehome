@@ -84,7 +84,15 @@ const Navbar = () => {
           </div>
           <div className="w-full hidden lg:flex gap-4 justify-end items-center">
             {/* <p className="font-normal text-[16px] cursor-pointer">My Account</p> */}
-            <p className="font-normal text-[16px] cursor-pointer">Wishlist</p>
+            <p
+              className="font-normal text-[16px] cursor-pointer"
+              onClick={() => {
+                navigate(`/wishlist`);
+                scrollToTop();
+              }}
+            >
+              Wishlist
+            </p>
             <p
               className="font-normal text-[16px] cursor-pointer"
               onClick={() => {
@@ -101,6 +109,10 @@ const Navbar = () => {
               className="sm:hidden"
               size={18}
               style={{ strokeWidth: 1 }}
+              onClick={() => {
+                navigate(`/wishlist`);
+                scrollToTop();
+              }}
             />
             <CiShoppingCart
               size={22}
