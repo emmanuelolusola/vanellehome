@@ -13,6 +13,7 @@ const Product = () => {
 
   const [product, setProduct] = useState();
   const [isItemAdded, setIsItemAdded] = useState(false);
+  const [isWishAdded, setIsWishAdded] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -58,6 +59,22 @@ const Product = () => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
     setIsItemAdded(true);
+  };
+
+  const handleAddWishlist = () => {
+    let wishlistItems = JSON.parse(localStorage.getItem("wishlistItems")) || [];
+
+    const item = {
+      id: product.id,
+      title: product.Name,
+      price: product.Price,
+      image: product.Image[0].url,
+    };
+
+    wishlistItems.push(item);
+    localStorage.setItem("wishlistItems", JSON.stringify(wishlistItems));
+
+    setIsWishAdded(true);
   };
 
   const scrollToTop = () => {
@@ -108,31 +125,55 @@ const Product = () => {
                   {product.Description}
                 </p>
               </div>
-              <div
-                className={`w-full lg:w-[200px] h-12 flex justify-center items-center gap-2 cursor-pointer ${
-                  isItemAdded ? "bg-[#cda78f]" : "bg-[#cda78f]"
-                }`}
-                onClick={!isItemAdded ? handleAddToCart : null}
-              >
-                {isItemAdded ? (
-                  <>
-                    <FaCheck color="white" />
-                    <p className="text-white font-bold text-[14px]">
-                      ADDED TO CART
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <IoAdd color="white" size={20} />
-                    <p className="text-white font-bold text-[14px]">
-                      ADD TO CART
-                    </p>
-                  </>
-                )}
-              </div>
-              <div className="w-full lg:w-[200px] border border-[#000] h-12 flex justify-center items-center gap-2 cursor-pointer">
-                <IoMdShareAlt color="#000" />
-                <p className="text-[#000] font-bold text-[14px]">SHARE</p>
+              <div className="w-full flex flex-col lg:flex-row gap-2 justify-between">
+                <div
+                  className={`w-full /lg:w-[200px] h-12 flex justify-center items-center gap-2 cursor-pointer ${
+                    isItemAdded ? "bg-[#cda78f]" : "bg-[#cda78f]"
+                  }`}
+                  onClick={!isItemAdded ? handleAddToCart : null}
+                >
+                  {isItemAdded ? (
+                    <>
+                      <FaCheck color="white" />
+                      <p className="text-white font-bold text-[14px]">
+                        ADDED TO CART
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <IoAdd color="white" size={20} />
+                      <p className="text-white font-bold text-[14px]">
+                        ADD TO CART
+                      </p>
+                    </>
+                  )}
+                </div>
+                <div
+                  className={`w-full /lg:w-[200px] h-12 flex justify-center items-center gap-2 cursor-pointer ${
+                    isItemAdded ? "bg-[#cda78f]" : "bg-[#cda78f]"
+                  }`}
+                  onClick={!isWishAdded ? handleAddWishlist : null}
+                >
+                  {isWishAdded ? (
+                    <>
+                      <FaCheck color="white" />
+                      <p className="text-white font-bold text-[14px]">
+                        ADDED TO WISHLIST
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <IoAdd color="white" size={20} />
+                      <p className="text-white font-bold text-[14px]">
+                        ADD TO WISHLIST
+                      </p>
+                    </>
+                  )}
+                </div>
+                <div className="w-full /lg:w-[200px] border border-[#000] h-12 flex justify-center items-center gap-2 cursor-pointer">
+                  <IoMdShareAlt color="#000" />
+                  <p className="text-[#000] font-bold text-[14px]">SHARE</p>
+                </div>
               </div>
             </div>
           </div>
