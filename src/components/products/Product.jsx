@@ -150,7 +150,7 @@ const Product = () => {
                 </div>
                 <div
                   className={`w-full /lg:w-[200px] h-12 flex justify-center items-center gap-2 cursor-pointer ${
-                    isItemAdded ? "bg-[#cda78f]" : "bg-[#cda78f]"
+                    isWishAdded ? "bg-[#cda78f]" : "bg-[#cda78f]"
                   }`}
                   onClick={!isWishAdded ? handleAddWishlist : null}
                 >

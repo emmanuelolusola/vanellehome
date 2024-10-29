@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoAdd } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
+import { CiShoppingCart } from "react-icons/ci";
+
 import img from "../../assets/product.png";
 import Navbar from "../home/Navbar";
 import Footer from "../home/Footer";
@@ -85,18 +87,18 @@ const Wishlist = () => {
           ) : (
             products.map((product) => (
               <div key={product.id}>
-                <div className="w-full flex justify-between mb-4">
-                  <div className="flex gap-4 items-center">
+                <div className="w-full flex justify-between items-center mb-4">
+                  <div className="flex flex-col lg:flex-row lg:gap-4 lg:items-center">
                     <img
                       src={product.image || img}
                       alt=""
-                      className="w-[50px] h-[50px]"
+                      className="w-[50px] h-[50px] hidden lg:block"
                     />
                     <p>{product.title}</p>
                     <p className="text-[#cda78f] font-bold">#{product.price}</p>
                   </div>
                   <div
-                    className={`w-[200px] h-12 flex justify-center items-center gap-2 cursor-pointer ${
+                    className={`w-[200px] hidden lg:block h-12 flex justify-center items-center gap-2 cursor-pointer ${
                       addedItemId === product.id
                         ? "bg-[#cda78f]"
                         : "bg-[#cda78f]"
@@ -120,6 +122,28 @@ const Wishlist = () => {
                         <p className="text-white font-bold text-[14px]">
                           ADD TO CART
                         </p>
+                      </>
+                    )}
+                  </div>
+                  <div
+                    className={`w-[50px] sm:hidden lg:block h-8 flex justify-center items-center gap-2 cursor-pointer ${
+                      addedItemId === product.id
+                        ? "bg-[#cda78f]"
+                        : "bg-[#cda78f]"
+                    }`}
+                    onClick={
+                      addedItemId !== product.id
+                        ? () => handleAddToCart(product)
+                        : null
+                    }
+                  >
+                    {addedItemId === product.id ? (
+                      <>
+                        <FaCheck color="white" />
+                      </>
+                    ) : (
+                      <>
+                        <CiShoppingCart color="white" size={20} />
                       </>
                     )}
                   </div>
