@@ -85,10 +85,21 @@ const Cart = () => {
                     <div className="w-full flex flex-col">
                       <div className="flex gap-2">
                         <p className="text-[12px]">{product.title}</p>
-                        <p className="text-[12px]">({product.quantity})</p>
+                        <p
+                          className="text-[12px]"
+                          style={{ fontFamily: '"Host Grotesk", sans-serif' }}
+                        >
+                          ({product.quantity})
+                        </p>
                       </div>
-                      <p className="text-[14px] text-[#cda78f] font-bold">
-                        #{product.basePrice}
+                      <p
+                        className="text-[14px] text-[#cda78f] font-bold"
+                        style={{ fontFamily: '"Host Grotesk", sans-serif' }}
+                      >
+                        #
+                        {new Intl.NumberFormat("en-US").format(
+                          product.basePrice
+                        )}
                       </p>
                     </div>
                   </div>
@@ -137,16 +148,25 @@ const Cart = () => {
                   >
                     <div className="flex gap-2">
                       <p>{product.title}</p>
-                      <p>({product.quantity})</p>
+                      <p style={{ fontFamily: '"Host Grotesk", sans-serif' }}>
+                        ({product.quantity})
+                      </p>
                     </div>
-                    <p>#{product.price}</p>
+                    <p style={{ fontFamily: '"Host Grotesk", sans-serif' }}>
+                      #{new Intl.NumberFormat("en-US").format(product.price)}
+                    </p>
                   </div>
                 ))}
               </div>
             )}
             <div className="w-full flex justify-between">
               <p className="font-bold text-[24px]">Total</p>
-              <p className="text-[24px]">#{totalPrice}</p>
+              <p
+                className="text-[24px]"
+                style={{ fontFamily: '"Host Grotesk", sans-serif' }}
+              >
+                #{new Intl.NumberFormat("en-US").format(totalPrice)}
+              </p>
             </div>
             {products.length === 0 ? (
               <button

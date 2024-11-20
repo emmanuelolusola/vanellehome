@@ -41,7 +41,12 @@ const Collection = () => {
               </div>
               <div className="flex flex-col items-center">
                 <p className="text-[14px] font-normal">Product Name</p>
-                <p className="font-bold text-[#cda78f] text-[14px]">#25,000</p>
+                <p
+                  className="font-bold text-[#cda78f] text-[14px]"
+                  style={{ fontFamily: '"Host Grotesk", sans-serif' }}
+                >
+                  #25,000
+                </p>
               </div>
             </div>
           ))}

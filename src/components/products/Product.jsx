@@ -111,16 +111,20 @@ const Product = () => {
             <img
               src={product.Image[0].url}
               alt={product.Name}
-              className="w-full lg:w-[600px] border border-b-1"
+              className="w-full lg:w-auto lg:h-[600px] border border-b-1"
             />
             <div className="w-full flex flex-col gap-4">
               <div className="w-full flex flex-col">
                 <p className="font-bold text-[24px] lg:text-[36px]">
                   {product.Name}
                 </p>
-                <p className="text-[#cda78f] text-[24px] lg:text-[36px] font-bold">
-                  #{product.Price}
+                <p
+                  className="text-[#cda78f] text-[21px] lg:text-[32px] font-bold"
+                  style={{ fontFamily: '"Host Grotesk", sans-serif' }}
+                >
+                  ₦{new Intl.NumberFormat("en-US").format(product.Price)}
                 </p>
+
                 <p className="text-[14px] lg:text-[16px] text-justify">
                   {product.Description}
                 </p>

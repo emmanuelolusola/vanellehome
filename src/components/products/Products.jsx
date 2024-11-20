@@ -143,8 +143,11 @@ const Products = () => {
                       {product.Name}
                     </p>
                     {product.Price && (
-                      <p className="font-bold text-[#cda78f] lg:text-[18px]">
-                        #{product.Price}
+                      <p
+                        className="font-bold text-[#cda78f] lg:text-[14px]"
+                        style={{ fontFamily: '"Host Grotesk", sans-serif' }}
+                      >
+                        ₦{new Intl.NumberFormat("en-US").format(product.Price)}
                       </p>
                     )}
                   </div>
