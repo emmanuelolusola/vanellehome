@@ -34,6 +34,7 @@ const Products = () => {
 
     fetchProducts();
   }, []);
+
   useEffect(() => {
     const category = searchParams.get("category");
     if (category) {
