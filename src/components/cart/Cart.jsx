@@ -50,6 +50,10 @@ const Cart = () => {
     0
   );
 
+  const scrollToTop = () => {
+    window.scroll(0, 0);
+  };
+
   return (
     <div className="w-full lg:h-screen lg:mt-24 flex flex-col justify-between">
       <div className="w-full fixed top-0 bg-[#eeebe8] z-20 drop-shadow-md">
@@ -76,7 +80,13 @@ const Cart = () => {
             products.map((product) => (
               <div key={product.id}>
                 <div className="w-full flex justify-center items-center pb-4">
-                  <div className="w-full flex justify-start items-start gap-2">
+                  <div
+                    className="w-full flex justify-start items-start gap-2"
+                    onClick={() => {
+                      navigate(`/product/${product.id}`);
+                      scrollToTop();
+                    }}
+                  >
                     <img
                       src={product.image || img}
                       className="w-10 h-10"

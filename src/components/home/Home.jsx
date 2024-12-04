@@ -14,7 +14,7 @@ import Recommended from "./Recommended";
 const Home = () => {
   return (
     <div>
-      <div className="hidden fixed w-full h-[100vh] flex justify-center items-center backdrop-blur-md px-[24px] z-30">
+      <div className="fixed w-full h-[100vh] flex justify-center items-center backdrop-blur-md px-[24px] z-30">
         <div className="flex flex-col gap-2 lg:gap-4 text-white py-4 px-8 lg:py-10 lg:px-20 backdrop-blur-lg rounded-xl shadow-lg border border-[#CDA78F]">
           <p className="text-[28px] lg:text-[42px] font-bold text-center">
             Under Construction
