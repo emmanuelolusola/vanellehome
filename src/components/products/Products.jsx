@@ -44,6 +44,9 @@ const Products = () => {
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
+
+    // Update the URL with the selected category
+    navigate(`/product?category=${encodeURIComponent(category)}`);
   };
 
   const filteredProducts = products.filter((product) => {
