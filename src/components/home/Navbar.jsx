@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../../assets/vlogo.png";
 import { RiMenu2Fill } from "react-icons/ri";
 import search from "../../assets/search-line.svg";
-import { VscAccount } from "react-icons/vsc";
 import { CiShoppingCart } from "react-icons/ci";
 import { FiHeart } from "react-icons/fi";
 import { IoIosClose } from "react-icons/io";
@@ -11,6 +10,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -55,16 +55,18 @@ const Navbar = () => {
               className="sm:hidden"
               onClick={toggleMenu}
             />
-            <div className="hidden w-[80%] bg-[#00000010] px-4 lg:px-6 py-2 lg:py-2 lg:flex justify-between items-center gap-2 lg:gap-4 rounded-full">
-              <img src={search} alt="" width={18} />
-              <input
-                type="text"
-                name=""
-                id=""
-                className="w-full bg-transparent placeholder-[#cda78f] custom-input-new text-[14px]"
-                placeholder="Search Items"
-              />
-            </div>
+            {location.pathname === "/product" && (
+              <div className="hidden w-[80%] bg-[#00000010] px-4 lg:px-6 py-2 lg:py-2 lg:flex justify-between items-center gap-2 lg:gap-4 rounded-full">
+                <img src={search} alt="" width={18} />
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  className="w-full bg-transparent placeholder-[#cda78f] custom-input-new text-[14px]"
+                  placeholder="Search Items"
+                />
+              </div>
+            )}
           </div>
           <div className="w-full flex justify-center">
             <img
@@ -83,7 +85,6 @@ const Navbar = () => {
             />
           </div>
           <div className="w-full hidden lg:flex gap-4 justify-end items-center">
-            {/* <p className="font-normal text-[16px] cursor-pointer">My Account</p> */}
             <p
               className="font-normal text-[16px] cursor-pointer"
               onClick={() => {
@@ -104,7 +105,6 @@ const Navbar = () => {
             </p>
           </div>
           <div className="sm:hidden w-full flex gap-[12px] justify-end items-center">
-            {/* <VscAccount size={18} style={{ strokeWidth: 0 }} /> */}
             <FiHeart
               className="sm:hidden"
               size={18}
@@ -220,9 +220,6 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          {/* <p className="font-normal text-[16px] text-black cursor-pointer hover-border-animation">
-            CUSTOMIZE GIFTS
-          </p> */}
           <p
             className="font-normal text-[16px] text-black cursor-pointer hover-border-animation"
             onClick={() => {
@@ -242,18 +239,20 @@ const Navbar = () => {
             CLEANING SERVICES
           </p>
         </div>
-        <div className="sm:hidden w-full flex justify-center items-center">
-          <div className="w-full lg:w-[600px] bg-[#00000010] px-4 lg:px-6 py-2 lg:py-2 flex justify-between items-center gap-2 lg:gap-4 rounded-full">
-            <img src={search} alt="" width={18} />
-            <input
-              type="text"
-              name=""
-              id=""
-              className="w-full bg-transparent placeholder-[#cda78f] custom-input-new text-[14px]"
-              placeholder="Search Items"
-            />
+        {location.pathname === "/product" && (
+          <div className="sm:hidden w-full flex justify-center items-center">
+            <div className="w-full lg:w-[600px] bg-[#00000010] px-4 lg:px-6 py-2 lg:py-2 flex justify-between items-center gap-2 lg:gap-4 rounded-full">
+              <img src={search} alt="" width={18} />
+              <input
+                type="text"
+                name=""
+                id=""
+                className="w-full bg-transparent placeholder-[#cda78f] custom-input-new text-[14px]"
+                placeholder="Search Items"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
       {/* Drawer */}
       {isMenuOpen && (
@@ -282,7 +281,7 @@ const Navbar = () => {
             <div
               className="relative"
               onClick={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
+              // onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <div className="w-full flex justify-start gap-2 items-center">
                 <p className="font-normal text-[14px] text-black cursor-pointer">
@@ -366,11 +365,6 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            {/* <div className="w-full flex justify-start items-center gap-2">
-              <p className="font-normal text-[14px] text-black cursor-pointer">
-                CUSTOMIZE GIFTS
-              </p>
-            </div> */}
             <div className="w-full flex justify-start items-center gap-2">
               <p
                 className="font-normal text-[14px] text-black cursor-pointer"

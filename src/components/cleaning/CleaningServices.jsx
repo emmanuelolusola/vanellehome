@@ -17,7 +17,7 @@ const CleaningServices = () => {
         <Navbar />
       </div>
       <div
-        className="w-full mt-24 h-[200px] lg:h-[300px] bg-cover bg-center relative py-10 cursor-pointer"
+        className="w-full mt-10 h-[200px] lg:h-[300px] bg-cover bg-center relative py-10 cursor-pointer"
         style={{ backgroundImage: `url(${img})` }}
       >
         <div className="absolute inset-0 bg-black opacity-70"></div>
