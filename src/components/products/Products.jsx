@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "../home/Navbar";
-import Footer from "../home/Footer";
 import { FiHeart } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
@@ -11,29 +10,61 @@ const Products = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [offset, setOffset] = useState(null);
+  const [hasMore, setHasMore] = useState(true);
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch(
-          "https://vanellehomebackendservices.onrender.com/product"
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch products");
-        }
-        const data = await response.json();
-        setProducts(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchProducts = useCallback(async () => {
+    if (!hasMore) return;
 
+    try {
+      setLoading(true);
+
+      const baseUrl = import.meta.env.VITE_AIRTABLE_API_BASE;
+      const token = import.meta.env.VITE_AIRTABLE_ACCESS_TOKEN;
+      const url = new URL(`${baseUrl}/Products`);
+      url.searchParams.append("pageSize", "15");
+      if (offset) {
+        url.searchParams.append("offset", offset);
+      }
+
+      const response = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch products");
+      }
+
+      const data = await response.json();
+
+      setProducts((prev) => {
+        const existingIds = new Set(prev.map((product) => product.id));
+        const newProducts = data.records.map((rec) => ({
+          ...rec.fields,
+          id: rec.id,
+        }));
+        return [
+          ...prev,
+          ...newProducts.filter((product) => !existingIds.has(product.id)),
+        ];
+      });
+
+      setOffset(data.offset || null);
+      setHasMore(!!data.offset);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }, [offset, hasMore]);
+
+  useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [fetchProducts]);
 
   useEffect(() => {
     const category = searchParams.get("category");
@@ -45,7 +76,6 @@ const Products = () => {
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
 
-    // Update the URL with the selected category
     navigate(`/product?category=${encodeURIComponent(category)}`);
   };
 
@@ -60,6 +90,20 @@ const Products = () => {
     window.scroll(0, 0);
   };
 
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop + 1 >=
+      document.documentElement.scrollHeight
+    ) {
+      fetchProducts();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -70,7 +114,7 @@ const Products = () => {
         <Navbar />
       </div>
       <hr />
-      {loading ? (
+      {loading && products.length === 0 ? (
         <div className="w-full h-[80vh] flex justify-center items-center">
           <div
             className="w-8 h-8 border-4 border-t-4 border-[#cda78f] rounded-full animate-spin"
@@ -161,7 +205,6 @@ const Products = () => {
           )}
         </div>
       )}
-      <Footer />
     </div>
   );
 };

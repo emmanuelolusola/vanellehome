@@ -97,7 +97,7 @@ const Product = () => {
           ></div>
         </div>
       ) : (
-        <div className="w-full px-[20px] lg:px-[10%] py-10 mt-24 flex flex-col gap-4">
+        <div className="w-full px-[20px] lg:px-[10%] py-10 mt-10 flex flex-col gap-4">
           <p
             className="text-[18px] underline cursor-pointer"
             onClick={() => {
