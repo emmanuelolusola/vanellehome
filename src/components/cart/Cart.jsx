@@ -60,7 +60,7 @@ const Cart = () => {
         <Navbar />
       </div>
       <hr />
-      <div className="w-full h-full flex flex-col lg:flex-row mt-24 lg:mt-0 pb-10 lg:justify-between lg:gap-30 lg:items-start">
+      <div className="w-full h-full flex flex-col lg:flex-row mt-10 lg:mt-24 lg:mt-0 pb-10 lg:justify-between lg:gap-30 lg:items-start">
         <div className="w-full px-[20px] lg:px-[10%] pt-10 flex flex-col gap-4">
           <p
             className="text-[18px] underline cursor-pointer"

@@ -62,13 +62,13 @@ const Wishlist = () => {
       </div>
 
       {bannerMessage && (
-        <div className="fixed top-2 left-0 lg:left-[20%] w-full lg:w-[60%] bg-[#cda78f] text-white text-center py-4 animate-dropDown z-30">
+        <div className="fixed top-0 left-0 lg:left-[20%] w-full lg:w-[60%] bg-[#cda78f] text-white text-center py-4 animate-dropDown z-30">
           {bannerMessage}
         </div>
       )}
 
       <hr />
-      <div className="w-full h-full flex flex-col lg:flex-row mt-24 lg:mt-0 pb-10 lg:justify-between lg:gap-30 lg:items-start">
+      <div className="w-full h-full flex flex-col lg:flex-row mt-10 lg:mt-24 lg:mt-0 pb-10 lg:justify-between lg:gap-30 lg:items-start">
         <div className="w-full px-[20px] lg:px-[10%] pt-10 flex flex-col gap-4">
           <p
             className="text-[18px] underline cursor-pointer"
